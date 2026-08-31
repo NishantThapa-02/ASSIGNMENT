@@ -36,7 +36,7 @@ public class TrianglesProgram {
       for(int column = 0; column < GAP_SIZE; column++){
         System.out.print(" ");
       }
-      for(int column = size; column < row; column--){
+      for(int column = size; column > row; column--){
         System.out.print("*");
       }
       System.out.println();
