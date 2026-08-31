@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class TemperatureProgram {
   public static void main(String[] agrs) {
-    Scanner keyboard = new Scanner(System.in);
-    int degrees;
+    Scanner scanner = new Scanner(System.in);
+    double degrees;
 
     System.out.print("Enter the degrees Fahrenheit: ");
-    degrees = keyboard.nextInt();
+    degrees = scanner.nextDouble();
     if (degrees <= 32) {
       System.out.println("Freezing");
     } else if (degrees <= 50) {
@@ -16,6 +16,6 @@ public class TemperatureProgram {
     } else{
       System.out.println("Hot");
     }
-    keyboard.close();
+    scanner.close();
   }
 }
