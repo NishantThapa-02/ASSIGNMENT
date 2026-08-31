@@ -11,6 +11,6 @@ public class TicketProgram {
     tickets = keyboard.nextInt();
     total = tickets * TICKET_COST;
     System.out.println("Total is $ " + total);
-    keybaord.close();
+    keyboard.close();
   }
 }
