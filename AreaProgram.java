@@ -9,6 +9,7 @@ public class AreaProgram {
 		Scanner base = new Scanner(System.in);
 		Scanner height = new Scanner(System.in);
 		int option;
+		int side, radii, baseY, heightY;
 
 		do {
 			System.out
@@ -17,15 +18,21 @@ public class AreaProgram {
 			option = keyboard.nextInt();
 
 			if (option == 1) {
-				int side = length.nextInt();
+        			System.out.print("Enter the length of the square: ");
+				side = length.nextInt();
 				System.out.println("The area of the square is: " + side * side);
 			} else if(option == 2) {
-				int radii = radius.nextInt();
+        			System.out.print("Enter the radius of the circle: ");
+				radii = radius.nextInt();
 				System.out.println("The area of the circle is: " + Math.PI * radii * radii);
 			} else if (option == 3) {
-				int base = base.nextInt();
-				int height = height.nextInt();
-				System.out.println("The area of the triangle is: " + 0.5 * base * height);
+        			System.out.print("Enter the base of the triangle: ");
+				baseY = base.nextInt();
+				System.out.print("Enter the height of the triangle: ");
+				heightY = height.nextInt();
+				System.out.println("The area of the triangle is: " + (0.5) * baseY * heightY);
+			}else if (option == 4) {
+        			System.out.println("Exiting the program.");
 			} else {
 				System.out.println("Invalid option!! You must choose from 1-4.");
 			}
