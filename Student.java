@@ -39,7 +39,7 @@ public class Student {
         return gpa;
     }
     
-    // constructor method, initialize the value of the object
+    //default constructor method, initialize the value of the object
     public Student() {
         this("", "", "", 0.0);
     }
