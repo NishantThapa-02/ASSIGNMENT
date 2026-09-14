@@ -39,7 +39,7 @@ public class Student {
         return gpa;
     }
     
-    //default constructor method, initialize the value of the object
+    // constructor method, initialize the value of the object
     public Student() {
         this("", "", "", 0.0);
     }
@@ -71,5 +71,8 @@ public class Student {
         System.out.println("Last name: " + student3.getLastName());
         System.out.println("Major: " + student3.getMajor());
         System.out.println("GPA: " + student3.getGpa());
+        //setting new gpa value
+        student3.setGpa(4.0);
+        System.out.println("New Gpa of Student " + student3.getFirstName() + ": " + student3.getGpa());
     }
 }
