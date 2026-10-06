@@ -1,78 +1,94 @@
-public class Student {
-    //private variables, no one can access this information outside of the class
-    private String firstName;
-    private String lastName;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Represents a university student.
+ */
+class Student implements Comparable<Student>{;
+    private int id;
+    private String name;
     private String major;
     private double gpa;
-    
-    // set the value of the variables
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    /**
+     * Creates a new student.
+     *
+     * @param id    the unique student ID
+     * @param name  the student's name
+     * @param major the student's major
+     * @param gpa   the student's grade point average
+     */
+    public Student(int id, String name, String major, double gpa){
+        this.id = id;
+        this.name = name;
+        this.major = major;
+        this.gpa = gpa;
     }
-
-    //get the value of the variables from user or object 
-    public String getFirstName() {
-        return firstName;
+    /** @param id the new student ID */
+    public void setId(int id) {
+        this.id = id;
     }
-    
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    /** @return the student ID */
+    public int getId(){
+        return id;
     }
-    
-    public String getLastName() {
-        return lastName;
+    /** @param id the new student's name */
+    public void setName(String name){
+        this.name = name;
     }
-    
-    public void setMajor(String major) {
+    /** @return the student's name */
+    public String getName(){
+        return name;
+    }
+    /** @param id the new student's major */
+    public void setMajor(String major){
         this.major = major;
     }
-    
-    public String getMajor() {
+    /** @return the student's major */
+    public String getMajor(){
         return major;
     }
-     
-    public void setGpa(double gpa) {
+    /** @param id the new student's gpa */
+    public void setGpa(double gpa){
         this.gpa = gpa;
     }
-    
-    public double getGpa() {
+    /** @return the student's gpa */
+    public double getGpa(){
         return gpa;
     }
-    
-    // constructor method, initialize the value of the object
-    public Student() {
-        this("", "", "", 0.0);
+
+    /**
+     * Natural ordering: by student name.
+     *
+     * @param other the student to compare to
+     * @return negative, zero, or positive if this name comes before, equals, or comes after the other
+     */
+    @Override
+    public int compareTo(Student other){
+        return this.name.compareTo(other.name);
     }
     
-    // constructor with parameters, initialize the value of the object after getting the input from user
-    public Student(String firstName, String lastName, String major, double gpa) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.major = major;
-        this.gpa = gpa;
+     /**
+     * Two students are equal if they have the same ID.
+     *
+     * @param obj the object to compare to
+     * @return true if obj is a Student with the same ID
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) 
+            return true;
+        if (!(obj instanceof Student)) 
+            return false;
+        return this.id == ((Student) obj).id;
     }
-    
-    public static void main(String[] args) {
-        // creating new object name student1
-        Student student1 = new Student();
-        System.out.println("First name: " + student1.getFirstName());
-        System.out.println("Last name: " + student1.getLastName());
-        System.out.println("Major: " + student1.getMajor());
-        System.out.println("GPA: " + student1.getGpa());
-        // creating new object name student2 and initializing its value
-        Student student2 = new Student("Peter", "Parker", "CS", 3.5);
-        System.out.println("First name: " + student2.getFirstName());
-        System.out.println("Last name: " + student2.getLastName());
-        System.out.println("Major: " + student2.getMajor());
-        System.out.println("GPA: " + student2.getGpa());
-        // creating new object name student3 and initializing its value
-        Student student3 = new Student("Harry", "Potter", "CS", 3.9);
-        System.out.println("First name: " + student3.getFirstName());
-        System.out.println("Last name: " + student3.getLastName());
-        System.out.println("Major: " + student3.getMajor());
-        System.out.println("GPA: " + student3.getGpa());
-        //setting new gpa value
-        student3.setGpa(4.0);
-        System.out.println("New Gpa of Student " + student3.getFirstName() + ": " + student3.getGpa());
+    /**
+     * Describes the student.
+     *
+     * @return a string with ID, name, major, and GPA
+     */
+    @Override
+    public String toString() {
+        return "Student[id=" + id + ", name=" + name + ", major=" + major + ", gpa=" + gpa + "]";
     }
 }
